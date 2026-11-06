@@ -1,0 +1,14 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q -p no:warnings"
+
+[tool.ruff]
+line-length = 140
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.ruff.lint.per-file-ignores]
+"evaluation/run_eval.py" = ["E501"]  # report text and tables
+"scripts/demo.py" = ["E501"]
+"tests/**" = ["E501"]  # parametrize tables

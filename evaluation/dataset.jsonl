@@ -1,0 +1,28 @@
+{"id": "p01", "kind": "paraphrase", "seed": "How can I get a refund within 30 days?", "probe": "How do I get my money back within 30 days", "expect": "hit"}
+{"id": "p02", "kind": "paraphrase", "seed": "How do I reset the password?", "probe": "How can I recover the password", "expect": "hit"}
+{"id": "p03", "kind": "paraphrase", "seed": "What is the shipping cost for standard delivery?", "probe": "What is the delivery price for standard shipping?", "expect": "hit"}
+{"id": "p04", "kind": "paraphrase", "seed": "How to cancel the subscription?", "probe": "How can I terminate the subscription", "expect": "hit"}
+{"id": "p05", "kind": "paraphrase", "seed": "What is the refund policy?", "probe": "What is the reimbursement policy", "expect": "hit"}
+{"id": "p06", "kind": "paraphrase", "seed": "Explain how DNS caching works", "probe": "Explain how DNS caching works please", "expect": "hit"}
+{"id": "p07", "kind": "paraphrase", "seed": "What does the premium plan cost?", "probe": "What is the pricing of the premium plan", "expect": "hit"}
+{"id": "p08", "kind": "paraphrase", "seed": "How do I change the password settings?", "probe": "How can I reset the password settings", "expect": "hit"}
+{"id": "n01", "kind": "number_change", "seed": "Can I get a refund within 30 days?", "probe": "Can I get a refund within 60 days?", "expect": "miss"}
+{"id": "n02", "kind": "number_change", "seed": "What is the shipping fee for orders over 50 dollars?", "probe": "What is the shipping fee for orders over 500 dollars?", "expect": "miss"}
+{"id": "n03", "kind": "number_change", "seed": "How long is the warranty, 12 months?", "probe": "How long is the warranty, 24 months?", "expect": "miss"}
+{"id": "n04", "kind": "number_change", "seed": "Does the premium plan cost 20 dollars?", "probe": "Does the premium plan cost 2 dollars?", "expect": "miss"}
+{"id": "g01", "kind": "negation", "seed": "Can I cancel the subscription?", "probe": "I cannot cancel the subscription", "expect": "miss"}
+{"id": "g02", "kind": "negation", "seed": "Is shipping available to my country?", "probe": "Is shipping not available to my country?", "expect": "miss"}
+{"id": "g03", "kind": "negation", "seed": "Should I reset the password?", "probe": "Should I never reset the password?", "expect": "miss"}
+{"id": "i01", "kind": "identifier", "seed": "What is the status of ticket AB-1001?", "probe": "What is the status of ticket AB-1002?", "expect": "ineligible", "note": "identifiers look personal, so the request bypasses the cache (conservative)"}
+{"id": "i02", "kind": "identifier", "seed": "Describe error code E4012 in the API", "probe": "Describe error code E4013 in the API", "expect": "ineligible", "note": "identifiers look personal, so the request bypasses the cache (conservative)"}
+{"id": "q01", "kind": "quoted", "seed": "What does the word \"escrow\" mean in the policy?", "probe": "What does the word \"lien\" mean in the policy?", "expect": "miss"}
+{"id": "v01", "kind": "context_version", "seed": "What is the refund policy?", "probe": "What is the refund policy?", "probe_opts": {"context_version": "docs-v2"}, "expect": "miss"}
+{"id": "v02", "kind": "template_version", "seed": "What is the refund policy?", "probe": "What is the reimbursement policy", "probe_opts": {"prompt_template_version": "v2"}, "expect": "miss"}
+{"id": "v03", "kind": "param_change", "seed": "What is the refund policy?", "probe": "What is the refund policy?", "probe_opts": {"max_output_tokens": 64}, "expect": "miss"}
+{"id": "x01", "kind": "personal", "seed": "What is the refund policy?", "probe": "Where is my order 482913?", "expect": "ineligible"}
+{"id": "x02", "kind": "personal", "seed": "What is the refund policy?", "probe": "Please email bob@example.com the refund policy", "expect": "ineligible"}
+{"id": "x03", "kind": "personal", "seed": "What is the refund policy?", "probe": "What is the refund policy?", "probe_opts": {"personalized": true}, "expect": "ineligible"}
+{"id": "u01", "kind": "unrelated", "seed": "What is the refund policy?", "probe": "What is the capital of France", "expect": "miss"}
+{"id": "u02", "kind": "unrelated", "seed": "How do I reset my password?", "probe": "Explain photosynthesis in plants", "expect": "miss"}
+{"id": "u03", "kind": "unrelated", "seed": "What is the shipping cost?", "probe": "Write a haiku about autumn", "expect": "miss"}
+{"id": "x04", "kind": "personal", "seed": "How do I reset my password?", "probe": "How do I reset my password?", "expect": "ineligible", "note": "'my <personal noun>' is treated as personal by design"}

@@ -1,0 +1,19 @@
+# redis-stack provides RediSearch (vector search). Put secrets in .env (see .env.example); do not write them here.
+services:
+  redis:
+    image: redis/redis-stack-server:7.4.0-v1
+    ports: ["127.0.0.1:6379:6379"]
+    healthcheck: {test: ["CMD", "redis-cli", "ping"], interval: 5s, timeout: 3s, retries: 10}
+  cache:
+    build: .
+    env_file: .env
+    environment:
+      SEMCACHE_BACKEND: redis
+      SEMCACHE_REDIS_URL: redis://redis:6379/0
+      SEMCACHE_VECTOR_MODE: auto
+      SEMCACHE_DATABASE_PATH: /srv/data/semcache.db
+    ports: ["127.0.0.1:8080:8080"]
+    volumes: ["semcache-data:/srv/data"]
+    depends_on: {redis: {condition: service_healthy}}
+volumes:
+  semcache-data:

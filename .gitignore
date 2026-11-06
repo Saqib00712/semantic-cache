@@ -1,0 +1,12 @@
+.env
+*.db
+*.db-wal
+*.db-shm
+data/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+*.pyc
+.coverage
